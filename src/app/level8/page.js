@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-export default function level8() {
+export default function Level8() {
   const [currentLesson, setCurrentLesson] = useState(0);
   const [code, setCode] = useState("");
   const [message, setMessage] = useState("");
