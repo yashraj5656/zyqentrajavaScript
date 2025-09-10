@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Editor, { loader } from "@monaco-editor/react";
+import { useMemo } from "react";
 
 export default function CodeEditor() {
   // ✅ Tasks list
@@ -29,7 +30,7 @@ export default function CodeEditor() {
   const [currentTask, setCurrentTask] = useState(0);
 
   // ✅ Starter code snippets for each task
-  const starterCodes = [
+  const starterCodes = useMemo(() => [
     `console.log("Hello World");`,
     `let x = 10;\nconsole.log(x);`,
     `function add(a, b) {\n  return a + b;\n}\nconsole.log(add(2,3));`,
@@ -50,7 +51,7 @@ export default function CodeEditor() {
     `function debounce(fn, delay) {\n  let timer;\n  return (...args) => {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn(...args), delay);\n  };\n}\n\nconst log = debounce(() => console.log("Debounced!"), 500);\nlog();`,
     `document.addEventListener("myEvent", e => console.log("Custom Event Fired!"));\nlet event = new Event("myEvent");\ndocument.dispatchEvent(event);`,
     `function* generator() {\n  yield 1;\n  yield 2;\n  yield 3;\n}\nlet gen = generator();\nconsole.log(gen.next().value);`,
-  ];
+  ], []);
 
   // ✅ State for code
   const [code, setCode] = useState(starterCodes[0]);
