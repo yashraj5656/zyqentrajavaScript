@@ -56,10 +56,10 @@ export default function CodeEditor() {
   const [code, setCode] = useState(starterCodes[0]);
   const [output, setOutput] = useState("");
 
-  // 🔄 Update editor code when task changes
-  useEffect(() => {
-    setCode(starterCodes[currentTask]);
-  }, [currentTask]);
+// 🔄 Update editor code when task changes
+useEffect(() => {
+  setCode(starterCodes[currentTask]);
+}, [currentTask, starterCodes]);
 
   // ✅ Neon Cyberpunk Theme
   loader.init().then((monaco) => {
