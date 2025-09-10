@@ -1,9 +1,13 @@
 "use client";
-import { useState, useEffect } from "react";
-import Editor, { loader } from "@monaco-editor/react";
-import { useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
+import dynamic from "next/dynamic";
+
+
 
 export default function CodeEditor() {
+
+  // Load Monaco only on client
+const Editor = dynamic(() => import("@monaco-editor/react"), { ssr: false });
   // ✅ Tasks list
   const tasks = [
     "Print 'Hello World'",
