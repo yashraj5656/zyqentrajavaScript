@@ -1568,7 +1568,8 @@ button{
     left: 0;                /* align to left edge */
     right: 0;
     border-radius: 0;       /* flush with screen edges */
-    width:fit-content;            /* take full width */
+    width:fit-content;  
+    justify-content: space-between;          
   }
   .nav-links {
     display: none;
