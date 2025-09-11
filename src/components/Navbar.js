@@ -21,10 +21,8 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar">
-        {/* Logo / brand */}
-        <div className="nav-logo">
-          <Link href="/">Zyqentra</Link>
-        </div>
+        
+
 
         {/* Hamburger */}
         <div
@@ -36,6 +34,10 @@ export default function Navbar() {
           <span></span>
         </div>
 
+        {/* Logo / brand */}
+        <div className="nav-logo">
+          <Link href="/">Zyqentra</Link>
+        </div>
         {/* Links */}
         <div className={`nav-links ${menuOpen ? "show" : ""}`}>
           <Link href="/" className={pathname === "/" ? "active" : ""}>
