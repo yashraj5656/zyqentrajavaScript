@@ -1576,6 +1576,7 @@ button{
     border-radius: 10px;
     width: 200px;
     text-align: right;
+    justify-content: right;
   }
 
   .nav-links.show {
