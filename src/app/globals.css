@@ -1581,8 +1581,8 @@ button{
     background: rgba(0, 0, 0, 0.95);
     padding: 1rem;
     border-radius: 0;       /* flush with screen edges */
-    width: 100%;            /* take full width */
-    text-align: center;
+    width: 50%;            /* take full width */
+    text-align: left;
   }
 
   .nav-links.show {
