@@ -1473,7 +1473,7 @@ button{
   .sub-card {
     width: 100%;
     max-width: 320px;
-    margin: 0.5rem 0;
+    margin: 0.5rem 0.5rem;
   }
 
   /* Task buttons shrink */
