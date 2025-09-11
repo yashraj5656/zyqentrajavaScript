@@ -61,7 +61,7 @@ export default function Navbar() {
           </Link>
 
           {user ? (
-            <button onClick={logout} className="logout-btn">
+            <button onClick={logout} className="logout-btn" style={{fontSize:"0.7rem", marginTop:"0px", marginRight:"1.7rem"}}>
               Logout
             </button>
           ) : (
