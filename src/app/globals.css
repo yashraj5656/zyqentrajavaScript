@@ -1405,14 +1405,17 @@ button{
 
 /* ==================== Mobile Responsiveness ==================== */
 @media (max-width: 768px) {
-  /* Navbar */
-  .navbar {
-    flex-wrap: wrap;
-    row-gap: 1rem;
-    padding: 0.75rem;
-    flex-direction: row;
-    align-items: center;
-  }
+/* Navbar (responsive but horizontal) */
+.navbar {
+  display: flex;
+  flex-direction: row; /* keep items in a row */
+  flex-wrap: wrap;     /* allow wrapping instead of overflowing */
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;        /* even spacing between items */
+  padding: 0.75rem;
+}
+
 
   .navbar a {
     font-size: 0.9rem;
