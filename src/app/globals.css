@@ -1568,7 +1568,7 @@ button{
     left: 0;                /* align to left edge */
     right: 0;
     border-radius: 0;       /* flush with screen edges */
-    width:fit-content;  
+    width:90%;  
     justify-content: space-between;          
   }
   .nav-links {
