@@ -15,12 +15,7 @@ const login = async (email, password) => {
       body: JSON.stringify({ email, password }),
     });
 
-    let data = {};
-    try {
-      data = await res.json(); // try parsing
-    } catch {
-      return { success: false, message: "Server did not return JSON" };
-    }
+    const data = await res.json();
 
     if (!res.ok) {
       return { success: false, message: data.error || "Login failed" };
@@ -44,12 +39,7 @@ const signup = async (email, password) => {
       body: JSON.stringify({ email, password }),
     });
 
-    let data = {};
-    try {
-      data = await res.json();
-    } catch {
-      return { success: false, message: "Server did not return JSON" };
-    }
+    const data = await res.json();
 
     if (!res.ok) {
       return { success: false, message: data.error || "Signup failed" };
@@ -64,7 +54,6 @@ const signup = async (email, password) => {
     return { success: false, message: error.message };
   }
 };
-
 
 
   // ✅ Logout
