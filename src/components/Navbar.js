@@ -45,11 +45,11 @@ export default function Navbar() {
           </>
         ) : (
           <>
-            <Link href="/login" className={pathname === "/login" ? "active" : ""}>
+            {/*<Link href="/login" className={pathname === "/login" ? "active" : ""}>
               Login
-            </Link>
+            </Link>*/}
             <Link href="/signup" className={pathname === "/signup" ? "active" : ""}>
-              Sign Up
+              SignUp/Login
             </Link>
           </>
         )}
