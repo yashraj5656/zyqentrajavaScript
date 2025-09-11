@@ -22,10 +22,14 @@ export default function Navbar() {
     <>
       <nav className="navbar">
         
-
+        {/* Logo / brand */}
+        <div className="nav-logo">
+          <Link href="/">Zyqentra</Link>
+        </div>
 
         {/* Hamburger */}
         <div
+        style={{marginRight:"1.7rem"}}
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -34,10 +38,7 @@ export default function Navbar() {
           <span></span>
         </div>
 
-        {/* Logo / brand */}
-        <div className="nav-logo">
-          <Link href="/">Zyqentra</Link>
-        </div>
+
         {/* Links */}
         <div className={`nav-links ${menuOpen ? "show" : ""}`}>
           <Link href="/" className={pathname === "/" ? "active" : ""}>
