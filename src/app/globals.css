@@ -1467,7 +1467,7 @@ button{
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin-right: 7%;
+    margin-right: 2rem;
   }
 
   .sub-card {
