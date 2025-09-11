@@ -1557,7 +1557,7 @@ button{
 }
 
 .hamburger span {
-  width: 25px;
+  width: 20px;
   height: 3px;
   background: #fff;
   transition: all 0.3s ease;
