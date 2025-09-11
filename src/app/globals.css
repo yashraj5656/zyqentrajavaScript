@@ -1409,9 +1409,7 @@ button{
 
 
 
-  .navbar a {
-    font-size: 0.9rem;
-  }
+
 
   /* App Layout */
   .app {
@@ -1486,11 +1484,7 @@ button{
 }
 
 @media (max-width: 480px) {
-  /* Navbar stack */
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
+
 
   /* Header text smaller */
   .header h1 {
