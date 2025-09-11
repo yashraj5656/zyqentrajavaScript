@@ -63,7 +63,7 @@ export default function SubscribePlans() {
   };
 
   return (
-    <div className="hasa">
+    <div className="hasa" style={{marginRight:"1.7rem"}}>
       <div className="sub-wrapper">
         {plans.map((plan, idx) => (
           <div className="sub-card" key={idx}>
