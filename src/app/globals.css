@@ -1565,7 +1565,7 @@ button{
 /* ========== Mobile ========== */
 @media (max-width: 768px) {
   .navbar{
-    width: 90%;
+    width: 100%;
   }
   .nav-links {
     display: none;
