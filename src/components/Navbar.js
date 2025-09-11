@@ -23,7 +23,7 @@ export default function Navbar() {
       <nav className="navbar">
         {/* Logo / brand */}
         <div className="nav-logo">
-          <Link href="/">CodeVerse</Link>
+          <Link href="/">Zyqentra</Link>
         </div>
 
         {/* Hamburger */}
