@@ -1578,7 +1578,8 @@ button{
 /* ========== Mobile ========== */
 @media (max-width: 768px) {
   .hamburger {
-    display: flex; /* show hamburger */
+    display: flex; 
+    justify-content: left;/* show hamburger */
   }
 
   .nav-links {
