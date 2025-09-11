@@ -1564,13 +1564,7 @@ button{
 
 /* ========== Mobile ========== */
 @media (max-width: 768px) {
-  .navbar{
-    left: 0;                /* align to left edge */
-    right: 0;
-    border-radius: 0;       /* flush with screen edges */
-    width:90%;  
-    justify-content: space-between;          
-  }
+
   .nav-links {
     display: none;
     flex-direction: column;
