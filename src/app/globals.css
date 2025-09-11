@@ -1565,7 +1565,7 @@ button{
 /* ========== Mobile ========== */
 @media (max-width: 768px) {
   .navbar{
-        left: 0;                /* align to left edge */
+    left: 0;                /* align to left edge */
     right: 0;
     border-radius: 0;       /* flush with screen edges */
     width: 100%;            /* take full width */
