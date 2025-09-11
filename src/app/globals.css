@@ -1552,6 +1552,7 @@ button{
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  justify-content: right;
 }
 
 .hamburger span {
@@ -1577,6 +1578,7 @@ button{
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+    justify-content: right;
   }
 
   .nav-links {
