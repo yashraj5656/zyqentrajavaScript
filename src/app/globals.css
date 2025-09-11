@@ -1408,7 +1408,7 @@ button{
   /* Navbar */
   .navbar {
     flex-wrap: wrap;
-    gap: 1rem;
+    row-gap: 1rem;
     padding: 0.75rem;
     flex-direction: row;
     align-items: center;
