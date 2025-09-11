@@ -1528,8 +1528,10 @@ button{
   text-decoration: none;
 }
 
+/* Links (default = desktop layout) */
 .nav-links {
-  display: flex;
+  display: flex;              /* row on desktop */
+  flex-direction: row;
   gap: 1.5rem;
 }
 
@@ -1546,13 +1548,12 @@ button{
   color: #00d4ff;
 }
 
-/* Hamburger Button */
+/* Hamburger hidden on desktop */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  justify-content: right;
 }
 
 .hamburger span {
@@ -1574,16 +1575,15 @@ button{
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Mobile Styles */
+/* ========== Mobile ========== */
 @media (max-width: 768px) {
   .hamburger {
-    display: flex;
-    justify-content: right;
+    display: flex; /* show hamburger */
   }
 
   .nav-links {
-    display: none;
-    flex-direction: column;
+    display: none;             /* hide links by default */
+    flex-direction: column;    /* vertical only when open */
     gap: 1rem;
     position: absolute;
     top: 60px;
@@ -1596,6 +1596,6 @@ button{
   }
 
   .nav-links.show {
-    display: flex;
+    display: flex;             /* visible when toggled */
   }
 }
