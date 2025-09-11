@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/components/AuthContext";
@@ -6,6 +7,7 @@ import { useAuth } from "@/components/AuthContext";
 export default function Navbar() {
   const pathname = usePathname();
   const { user, logout } = useAuth();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const progressMap = {
     "/": 0,
@@ -19,40 +21,58 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <Link href="/" className={pathname === "/" ? "active" : ""}>
-          Home
-        </Link>
-        <Link href="/lesson" className={pathname === "/lesson" ? "active" : ""}>
-          Lesson
-        </Link>
-        {/*<Link href="/quiz" className={pathname === "/quiz" ? "active" : ""}>
-          Quiz
-        </Link>*/}
-        <Link
-          href="/codeeditor"
-          className={pathname === "/codeeditor" ? "active" : ""}
-        >
-          CodeLab
-        </Link>
-        <Link href="/subscribe" className={pathname === "/subscribe" ? "active" : ""}>
-          Pro
-        </Link>
+        {/* Logo / brand */}
+        <div className="nav-logo">
+          <Link href="/">CodeVerse</Link>
+        </div>
 
-        {user ? (
-          <>
-            {/*<span className="user">{user.email}</span>*/}
-            {/*<button style={{width:"10%", alignItems:"left", fontSize:"0.7rem", marginTop:"0px"}}onClick={logout}>Logout</button>*/}
-          </>
-        ) : (
-          <>
-            {/*<Link href="/login" className={pathname === "/login" ? "active" : ""}>
-              Login
-            </Link>*/}
-            <Link href="/signup" className={pathname === "/signup" ? "active" : ""}>
+        {/* Hamburger */}
+        <div
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/* Links */}
+        <div className={`nav-links ${menuOpen ? "show" : ""}`}>
+          <Link href="/" className={pathname === "/" ? "active" : ""}>
+            Home
+          </Link>
+          <Link
+            href="/lesson"
+            className={pathname === "/lesson" ? "active" : ""}
+          >
+            Lesson
+          </Link>
+          <Link
+            href="/codeeditor"
+            className={pathname === "/codeeditor" ? "active" : ""}
+          >
+            CodeLab
+          </Link>
+          <Link
+            href="/subscribe"
+            className={pathname === "/subscribe" ? "active" : ""}
+          >
+            Pro
+          </Link>
+
+          {user ? (
+            <button onClick={logout} className="logout-btn">
+              Logout
+            </button>
+          ) : (
+            <Link
+              href="/signup"
+              className={pathname === "/signup" ? "active" : ""}
+            >
               SignUp/Login
             </Link>
-          </>
-        )}
+          )}
+        </div>
       </nav>
 
       {/* Progress Bar */}

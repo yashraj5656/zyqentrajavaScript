@@ -1405,18 +1405,7 @@ button{
 
 /* ==================== Mobile Responsiveness ==================== */
 @media (max-width: 768px) {
-/* Navbar stays horizontal */
-.navbar {
-  display: flex;
-  flex-direction: row;   /* force row layout */
-  flex-wrap: nowrap;     /* prevent wrapping */
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;           /* spacing between links */
-  padding: 0.75rem 1rem;
-  overflow-x: auto;      /* allow scrolling if too many links */
-  white-space: nowrap;   /* keep links on one line */
-}
+
 
 
 
@@ -1515,5 +1504,96 @@ button{
   /* Subscription card adjust */
   .sub-card {
     width: 90%;
+  }
+}
+
+/* Navbar Base */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #000;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a,
+.logout-btn {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.logout-btn:hover {
+  color: #00d4ff;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+/* Animate into X when open */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 1rem;
+    border-radius: 10px;
+    width: 200px;
+    text-align: right;
+  }
+
+  .nav-links.show {
+    display: flex;
   }
 }
