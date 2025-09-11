@@ -1405,16 +1405,19 @@ button{
 
 /* ==================== Mobile Responsiveness ==================== */
 @media (max-width: 768px) {
-/* Navbar (responsive but horizontal) */
+/* Navbar stays horizontal */
 .navbar {
   display: flex;
-  flex-direction: row; /* keep items in a row */
-  flex-wrap: wrap;     /* allow wrapping instead of overflowing */
+  flex-direction: row;   /* force row layout */
+  flex-wrap: nowrap;     /* prevent wrapping */
   justify-content: center;
   align-items: center;
-  gap: 0.75rem;        /* even spacing between items */
-  padding: 0.75rem;
+  gap: 1.5rem;           /* spacing between links */
+  padding: 0.75rem 1rem;
+  overflow-x: auto;      /* allow scrolling if too many links */
+  white-space: nowrap;   /* keep links on one line */
 }
+
 
 
   .navbar a {
