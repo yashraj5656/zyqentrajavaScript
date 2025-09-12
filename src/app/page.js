@@ -240,25 +240,25 @@ export default function Dashboard() {
           </button>
           {isInfoOpen && (
   <motion.div
-    className=""
+    className="knk"
     initial={{ opacity: 0, height: 0 }}
     animate={{ opacity: 1, height: "auto" }}
     transition={{ duration: 0.4 }}
   >
-    <h4 className="text-lg font-semibold mb-2">The Day the Web Came Alive</h4>
-    <p className="mb-4 text-gray-300">
+    <h4 className="kh">The Day the Web Came Alive</h4>
+    <p className="kp">
       Once upon a time, the internet was a quiet place. Websites were static, plain, and lifeless—just blocks of text and pictures. People could read, but they couldn’t interact. It was a world of silence… until a tiny hero named <strong>JavaScript</strong> appeared.
     </p>
-    <p className="mb-4 text-gray-300">
+    <p className="kp">
       JavaScript was small, flexible, and a bit mischievous. Wherever it went, it brought websites to life. Buttons could now click, menus could slide, images could change, and forms could talk back. Web pages became magical playgrounds where ideas could move and dance.
     </p>
-    <p className="mb-4 text-gray-300">
+    <p className="kp">
       One day, a young developer named <strong>Alex</strong> discovered JavaScript. At first, Alex was intimidated by the strange syntax and endless possibilities. But as they wrote their first function, something clicked. With every line of code, the web world responded: alerts popped up, animations danced, and games came to life.
     </p>
-    <p className="mb-4 text-gray-300">
+    <p className="kp">
       Soon, Alex realized JavaScript wasn’t just a tool—it was a key to creativity. It could turn imagination into reality. And from that day on, Alex didn’t just use the web—they <strong>built worlds</strong>.
     </p>
-    <p className="text-gray-300">
+    <p className="kp">
       JavaScript, the tiny hero, had done its job: it made the web alive, interactive, and limitless. And in the hands of learners like Alex, the adventure had just begun.
     </p>
   </motion.div>
@@ -269,7 +269,7 @@ export default function Dashboard() {
         
 
         {/* Levels */}
-        <div className="">
+        <div className="t">
           {levels.map((level, index) => (
             <motion.div
               key={index}
@@ -280,23 +280,23 @@ export default function Dashboard() {
                   : "bg-gray-700/50 border border-gray-600 opacity-70"
               }`}
             >
-              <h3 className="">
+              <h3 className="tt">
                 {level.title}
                 {level.unlocked ? (
-                  <span className="text-green-400 animate-pulse">✅</span>
+                  <span className="">✅</span>
                 ) : (
-                  <span className="text-red-400">🔒</span>
+                  <span className="">🔒</span>
                 )}
               </h3>
-              <p className="text-sm text-gray-300 mb-4">{level.desc}</p>
+              <p className="td">{level.desc}</p>
               {level.unlocked ? (
                 <Link href={level.link}>
-                  <button className="submit-btn" data-text="Get In">
+                  <button className="submitt-btn" data-text="Get In">
                     {index === levels.length - 1 ? "🎓 Claim Certificate" : "▶ Start Lesson"}
                   </button>
                 </Link>
               ) : (
-                <p className="text-gray-400 text-sm">Complete previous level to unlock</p>
+                <p className="tp">Complete previous level to unlock</p>
               )}
             </motion.div>
           ))}
