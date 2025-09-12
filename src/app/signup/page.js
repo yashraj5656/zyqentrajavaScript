@@ -1,16 +1,18 @@
 "use client";
 import { useState } from "react";
-import { useAuth } from "@/components/AuthContext"; // ✅ global auth
-import { useRouter } from "next/navigation"; // ✅ for redirect
+import { useAuth } from "@/components/AuthContext"; 
+import { useRouter } from "next/navigation";
 
 export default function LoginSignup() {
   const { login, signup } = useAuth();
   const [isLogin, setIsLogin] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
-  const router = useRouter(); // ✅
+  const [loading, setLoading] = useState(false); // ✅ loader state
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // ✅ show loader
     try {
       if (isLogin) {
         const { success, message } = await login(formData.email, formData.password);
@@ -32,16 +34,31 @@ export default function LoginSignup() {
     } catch (err) {
       console.error("Auth failed:", err);
       alert("❌ Something went wrong. Check console.");
+    } finally {
+      setLoading(false); // ✅ hide loader
     }
   };
-  
-  
-  
-  
-  
 
   return (
-    <div className="glitch-form-wrapper min-h-screen">
+    <div className="glitch-form-wrapper min-h-screen flex items-center justify-center relative">
+      
+      {/* ✅ Loader Overlay */}
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
+          <div className="banter-loader">
+            <div className="banter-loader__box"></div>
+            <div className="banter-loader__box"></div>
+            <div className="banter-loader__box"></div>
+            <div className="banter-loader__box"></div>
+            <div className="banter-loader__box"></div>
+            <div className="banter-loader__box"></div>
+            <div className="banter-loader__box"></div>
+            <div className="banter-loader__box"></div>
+            <div className="banter-loader__box"></div>
+          </div>
+        </div>
+      )}
+
       <form className="glitch-card" onSubmit={handleSubmit}>
         {/* Header */}
         <div className="card-header">
@@ -64,7 +81,6 @@ export default function LoginSignup() {
             </svg>
             <span>{isLogin ? "SECURE_LOGIN" : "CREATE_ACCOUNT"}</span>
           </div>
-
           <div className="card-dots">
             <span></span><span></span><span></span>
           </div>
@@ -112,20 +128,23 @@ export default function LoginSignup() {
             data-text={isLogin ? "INITIATE_CONNECTION" : "REGISTER_ACCOUNT"}
             type="submit"
             className="submit-btn"
+            disabled={loading} // ✅ prevent double submit
           >
             <span className="btn-text">
               {isLogin ? "INITIATE_CONNECTION" : "REGISTER_ACCOUNT"}
             </span>
           </button>
+
           <div className="card-footer">
-  <button
-    type="button"
-    className="switch-btn"
-    onClick={() => setIsLogin(!isLogin)}
-  >
-    {isLogin ? "Need an account? Sign up" : "Already have an account? Login"}
-  </button>
-</div>
+            <button
+              type="button"
+              className="switch-btn"
+              onClick={() => setIsLogin(!isLogin)}
+              disabled={loading} // ✅ disable while loading
+            >
+              {isLogin ? "Need an account? Sign up" : "Already have an account? Login"}
+            </button>
+          </div>
         </div>
       </form>
     </div>

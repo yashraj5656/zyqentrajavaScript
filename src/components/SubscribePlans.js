@@ -40,7 +40,7 @@ export default function SubscribePlans() {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
         amount: order.amount,
         currency: order.currency,
-        name: "JS Learning ",
+        name: "JavaScript Learning ",
         description: `Subscription ${plan.currency} ${plan.amount}`,
         order_id: order.id,
         handler: function (response) {
@@ -64,6 +64,18 @@ export default function SubscribePlans() {
 
   return (
     <div className="hasa" style={{marginRight:"1.7rem"}}>
+      {loading ? 
+<div className="banter-loader">
+  <div className="banter-loader__box"></div>
+  <div className="banter-loader__box"></div>
+  <div className="banter-loader__box"></div>
+  <div className="banter-loader__box"></div>
+  <div className="banter-loader__box"></div>
+  <div className="banter-loader__box"></div>
+  <div className="banter-loader__box"></div>
+  <div className="banter-loader__box"></div>
+  <div className="banter-loader__box"></div>
+</div> : ""}
       <div className="sub-wrapper">
         {plans.map((plan, idx) => (
           <div className="sub-card" key={idx}>
@@ -72,7 +84,7 @@ export default function SubscribePlans() {
                 {plan.name}
               </h3>
             </div>
-
+            
             <div className="sub-body">
               <p className="sub-des">{plan.description}</p>
               <p
@@ -109,7 +121,7 @@ export default function SubscribePlans() {
               >
                 {loading ? "Processing..." : <span>Subscribe Now</span>}
               </button>
-            </div>
+              </div>
           </div>
         ))}
       </div>
