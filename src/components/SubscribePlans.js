@@ -40,7 +40,7 @@ export default function SubscribePlans() {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
         amount: order.amount,
         currency: order.currency,
-        name: "JS Learning App",
+        name: "JS Learning ",
         description: `Subscription ${plan.currency} ${plan.amount}`,
         order_id: order.id,
         handler: function (response) {

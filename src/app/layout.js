@@ -4,7 +4,7 @@ import { AuthProvider } from "@/components/AuthContext";
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
-  title: "Zyqentra",
+  title: "Zyqentra - JavaScript",
   description: "Learn JavaScript step by step",
   icons: {
     icon: "/favicon.png", // ✅ Path to your favicon
